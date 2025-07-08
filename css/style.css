@@ -1,0 +1,63 @@
+/* Custom styles for My Tailwind Website */
+
+/* Example: override Tailwind for a custom button */
+.custom-btn {
+  @apply bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600;
+}
+
+/* Header hover effect */
+#main-header:hover {
+  background: #000 !important;
+  color: #fff;
+}
+#main-header:hover #brand {
+  @apply text-white;
+}
+#main-header:hover .nav-link {
+  color: #fff;
+}
+
+/* Nav link underline on hover (fixed for pseudo-element) */
+.nav-link {
+  color: #000;
+  position: relative;
+  transition: color 0.3s;
+}
+#main-header:hover .nav-link {
+  color: #fff;
+}
+.nav-link::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0; right: 0; bottom: -4px;
+  height: 2px;
+  background: currentColor;
+  transform: scaleX(0);
+  transition: transform 0.3s;
+}
+.nav-link:hover::after,
+#main-header:hover .nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Mobile nav link styles */
+.nav-link-mobile {
+  @apply text-black px-2 py-2 rounded transition-colors duration-300;
+}
+#main-header:hover .nav-link-mobile {
+  @apply text-white bg-black;
+}
+#main-header:hover #mobile-menu {
+  background: #000 !important;
+}
+#main-header:hover .nav-link-mobile {
+  color: #fff !important;
+}
+
+#main-header:hover #mobile-menu-btn svg {
+  stroke: #000;
+}
+#mobile-menu:not(.hidden) ~ #mobile-menu-btn svg {
+  stroke: #fff;
+}

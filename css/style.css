@@ -56,8 +56,16 @@
 }
 
 #main-header:hover #mobile-menu-btn svg {
-  stroke: #000;
+  stroke: #fff;
 }
 #mobile-menu:not(.hidden) ~ #mobile-menu-btn svg {
-  stroke: #fff;
+  stroke: #000;
+}
+
+.contact-card {
+  will-change: transform, opacity;
+}
+.contact-card:hover {
+  transform: scale(1.05);
+  opacity: 0.7;
 }

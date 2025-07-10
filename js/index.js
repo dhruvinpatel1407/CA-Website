@@ -24,4 +24,30 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   }
+
+  // Contact cards scroll-in animation
+  function revealCards() {
+    const cards = document.querySelectorAll('.contact-card');
+    const triggerBottom = window.innerHeight * 0.9;
+    cards.forEach((card, i) => {
+      const cardTop = card.getBoundingClientRect().top;
+      if(cardTop < triggerBottom) {
+        setTimeout(() => {
+          card.classList.add('opacity-100', 'translate-x-0');
+          card.classList.remove('opacity-0', '-translate-x-10');
+        }, i * 150); // stagger animation
+      }
+    });
+  }
+  window.addEventListener('scroll', revealCards);
+  revealCards(); 
+
+   // Simple parallax effect for hero background
+   window.addEventListener('scroll', function() {
+    const parallax = document.getElementById('parallax-bg');
+    if (parallax) {
+      let offset = window.scrollY * 0.4;
+      parallax.style.transform = `translateY(${offset}px) scale(1.1)`;
+    }
+  });
 });

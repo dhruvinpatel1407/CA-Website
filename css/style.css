@@ -69,3 +69,16 @@
   transform: scale(1.05);
   opacity: 0.7;
 }
+
+/* Navbar background styles for video overlay */
+.navbar-bg {
+  background-color: transparent;
+}
+
+.navbar-bg.scrolled {
+  background-color: white !important; /* Change to your desired color */
+}
+
+.navbar-bg:hover {
+  background-color: #2d3748 !important; /* Change to your desired hover color */
+}

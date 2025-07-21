@@ -10,7 +10,12 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body class="bg-gray-50 text-gray-900 min-h-screen">
-    <header id="main-header" class="bg-white transition-colors duration-300 sticky top-0 z-50">
+    <!-- Video Background -->
+    <video autoplay muted loop id="bg-video" class="fixed top-0 left-0 w-full h-full object-cover -z-10">
+      <source src="./images/3129424-uhd_3840_2160_24fps.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <header id="main-header" class="navbar-bg bg-transparent transition-colors duration-300 sticky top-0 z-50">
       <nav class="mx-auto max-w-7xl px-6 py-8 flex items-center justify-between">
         <span class="text-2xl font-bold tracking-tight transition-colors duration-300" id="brand">K. G. Bhut & Associates</span>
         <ul class="hidden md:flex gap-8 font-semibold transition-colors duration-300" id="nav-menu">
@@ -18,7 +23,7 @@
           <li><a href="./pages/about.html" class="nav-link relative transition-colors duration-300">ABOUT</a></li>
           <li><a href="./pages/services.html" class="nav-link relative transition-colors duration-300">SERVICES</a></li>
           <li><a href="#case-study" class="nav-link relative transition-colors duration-300">CASE STUDY</a></li>
-          <li><a href="#blog" class="nav-link relative transition-colors duration-300">BLOG</a></li>
+          <li><a href="https://blogs.cakhushbu.com" target="_blank" rel="noopener" class="nav-link relative transition-colors duration-300">BLOG</a></li>
           <li><a href="./pages/contact.html" class="nav-link relative transition-colors duration-300">CONTACT</a></li>
         </ul>
         <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 focus:outline-none">
@@ -32,12 +37,12 @@
           <li><a href="./pages/about.html" class="nav-link-mobile transition-colors duration-300">ABOUT</a></li>
           <li><a href="./pages/services.html" class="nav-link-mobile transition-colors duration-300">SERVICES</a></li>
           <li><a href="#case-study" class="nav-link-mobile transition-colors duration-300">CASE STUDY</a></li>
-          <li><a href="#blog" class="nav-link-mobile transition-colors duration-300">BLOG</a></li>
+          <li><a href="https://blogs.cakhushbu.com" target="_blank" rel="noopener" class="nav-link relative transition-colors duration-300">BLOG</a></li>
           <li><a href="./pages/contact.html" class="nav-link-mobile transition-colors duration-300">CONTACT</a></li>
         </ul>
       </div>
     </header>
-    <main class="mx-auto max-w-7xl px-6 py-16 grid gap-12">
+    <main class="mx-auto max-w-7xl min-h-screen px-6 py-16 grid gap-12">
       <section>HOME Page</section>
     </main>
     <footer class="bg-black text-gray-200 pt-12 pb-6 mt-16">

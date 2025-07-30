@@ -1,84 +1,213 @@
-/* Custom styles for My Tailwind Website */
+/* Enhanced styles for K.G. Bhut & Associates with GSAP animations */
 
-/* Example: override Tailwind for a custom button */
+/* Ensure all content is visible by default - NO OPACITY RULES */
+* {
+  opacity: 1 !important;
+}
+
+body {
+  opacity: 1 !important;
+}
+
+/* Remove any problematic opacity or visibility rules */
+.hero-title,
+.hero-subtitle,
+.hero-buttons,
+.about-preview,
+.service-card,
+.feature-card,
+.location-card,
+.contact-card,
+.industry-card,
+.pricing-card,
+.case-study-card,
+.company-overview,
+.industry-expertise,
+.cta-content {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+}
+
+/* Custom button styles */
 .custom-btn {
   @apply bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600;
 }
 
-/* Header hover effect */
+/* Header styles */
+#main-header {
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
 #main-header:hover {
-  background: #000 !important;
+  background: rgba(0, 0, 0, 0.9) !important;
   color: #fff;
 }
+
 #main-header:hover #brand {
   @apply text-white;
 }
+
 #main-header:hover .nav-link {
   color: #fff;
 }
 
-/* Nav link underline on hover (fixed for pseudo-element) */
+/* Navigation link styles */
 .nav-link {
-  color: #000;
+  color: #fff;
   position: relative;
   transition: color 0.3s;
 }
-#main-header:hover .nav-link {
-  color: #fff;
-}
+
 .nav-link::after {
   content: "";
   display: block;
   position: absolute;
-  left: 0; right: 0; bottom: -4px;
+  left: 0; 
+  right: 0; 
+  bottom: -4px;
   height: 2px;
   background: currentColor;
   transform: scaleX(0);
   transition: transform 0.3s;
 }
-.nav-link:hover::after,
-#main-header:hover .nav-link:hover::after {
+
+.nav-link:hover::after {
   transform: scaleX(1);
 }
 
-/* Mobile nav link styles */
+/* Mobile navigation */
 .nav-link-mobile {
-  @apply text-black px-2 py-2 rounded transition-colors duration-300;
-}
-#main-header:hover .nav-link-mobile {
-  @apply text-white bg-black;
-}
-#main-header:hover #mobile-menu {
-  background: #000 !important;
-}
-#main-header:hover .nav-link-mobile {
-  color: #fff !important;
+  @apply text-gray-900 hover:text-green-600;
 }
 
-#main-header:hover #mobile-menu-btn svg {
-  stroke: #fff;
-}
-#mobile-menu:not(.hidden) ~ #mobile-menu-btn svg {
-  stroke: #000;
+/* Card hover effects */
+.service-card,
+.feature-card,
+.location-card,
+.contact-card,
+.industry-card,
+.pricing-card {
+  transition: all 0.3s ease;
+  opacity: 1 !important;
 }
 
-.contact-card {
-  will-change: transform, opacity;
+.service-card:hover,
+.feature-card:hover,
+.location-card:hover,
+.contact-card:hover,
+.industry-card:hover,
+.pricing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
-.contact-card:hover {
+
+/* Form styles */
+input:focus,
+textarea:focus,
+select:focus {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
+/* Button animations */
+button,
+.btn,
+a[class*="bg-"] {
+  transition: all 0.3s ease;
+}
+
+button:hover,
+.btn:hover,
+a[class*="bg-"]:hover {
   transform: scale(1.05);
-  opacity: 0.7;
 }
 
-/* Navbar background styles for video overlay */
-.navbar-bg {
-  background-color: transparent;
+/* FAQ styles */
+.faq-question svg {
+  transition: transform 0.3s ease;
 }
 
-.navbar-bg.scrolled {
-  background-color: white !important; /* Change to your desired color */
+.faq-answer {
+  transition: all 0.3s ease;
 }
 
-.navbar-bg:hover {
-  background-color: #2d3748 !important; /* Change to your desired hover color */
+/* Parallax background */
+#parallax-bg {
+  will-change: transform;
 }
+
+/* Counter animation */
+.counter {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #16a34a;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #15803d;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.125rem;
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none;
+  }
+}
+
+/* Force visibility for all elements */
+section,
+div,
+main,
+article,
+aside,
+header,
+footer,
+nav {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Remove any GSAP initial states that might be causing issues */
+.js-enabled .hero-title,
+.js-enabled .hero-subtitle,
+.js-enabled .hero-buttons,
+.js-enabled .about-preview,
+.js-enabled .service-card,
+.js-enabled .case-study-card,
+.js-enabled .company-overview,
+.js-enabled .industry-expertise {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
+}
+

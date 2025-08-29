@@ -33,41 +33,39 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Cache header elements
     const header = document.getElementById('main-header');
-    const brand = document.getElementById('brand');
-    const navMenu = document.getElementById('nav-menu');
+    const isHomePage = window.location.pathname === '/' || window.location.pathname.includes('index.html');
 
-    // Scroll handler sets header background and nav link colors
-    function handleScroll() {
-      if (window.scrollY > 100) {
-        if (header) {
-          header.classList.add('bg-white', 'shadow-lg');
-          header.classList.remove('bg-transparent');
-        }
-        if (brand) brand.classList.add('text-gray-900');
-        if (navMenu) {
-          navMenu.querySelectorAll('.nav-link').forEach(link => {
-            link.classList.add('text-gray-900');
-            link.classList.remove('text-white');
-          });
-        }
-      } else {
-        if (header) {
-          header.classList.remove('bg-white', 'shadow-lg');
-          header.classList.add('bg-transparent');
-        }
-        if (brand) brand.classList.remove('text-gray-900');
-        if (navMenu) {
-          navMenu.querySelectorAll('.nav-link').forEach(link => {
-            link.classList.remove('text-gray-900');
-            link.classList.add('text-white');
-          });
-        }
+    // Initialize header for home page - starts with white background
+    function initializeHeader() {
+      if (isHomePage && header) {
+        // On load: white background + black text (default state)
+        header.classList.remove('home-transparent');
+        header.classList.add('shadow-lg');
       }
     }
 
-    // Attach scroll event and run once on page load
-    window.addEventListener('scroll', handleScroll);
-    window.addEventListener('load', handleScroll);
+    // Scroll handler - only for home page
+    function handleScroll() {
+      if (!isHomePage || !header) return;
+      
+      if (window.scrollY > 50) {
+        // Scrolled down: Use transparent background + black text
+        header.classList.add('home-transparent');
+        header.classList.remove('shadow-lg');
+      } else {
+        // At top: Use white background + black text
+        header.classList.remove('home-transparent');
+        header.classList.add('shadow-lg');
+      }
+    }
+
+    // Initialize and attach events
+    initializeHeader();
+    
+    if (isHomePage) {
+      window.addEventListener('scroll', handleScroll);
+      window.addEventListener('load', handleScroll);
+    }
 
     // Hero content fade-in animation (for pages with .hero-content)
     if (document.querySelector('.hero-content')) {

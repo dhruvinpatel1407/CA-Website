@@ -7,6 +7,7 @@
 
 body {
   opacity: 1 !important;
+  background: #ffffff; /* rest of page white; hero section keeps its own gray */
 }
 
 /* Remove any problematic opacity or visibility rules */
@@ -34,15 +35,12 @@ body {
   @apply bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600;
 }
 
-/* Header styles */
+/* Header styles – transparent so hero shows behind */
 #main-header {
   backdrop-filter: blur(10px);
   transition: all 0.3s ease;
-}
-
-/* Default: White background + black text for all pages */
-#main-header {
-  background: rgba(255, 255, 255, 0.95) !important;
+  background: transparent !important;
+  box-shadow: none !important;
 }
 
 #main-header #brand {
@@ -60,26 +58,10 @@ body {
   transition: color 0.3s;
 }
 
-/* Hover: Black background + white text */
-#main-header:hover {
-  background: rgba(0, 0, 0, 0.9) !important;
-}
 
-#main-header:hover #brand {
-  color: #fff !important;
-}
-
-#main-header:hover .nav-link {
-  color: #fff !important;
-}
-
-#main-header:hover #mobile-menu-btn {
-  color: #fff !important;
-}
-
-/* Home page specific: Transparent background on scroll with black text */
+/* Home page: same hero gray as viewport */
 #main-header.home-transparent {
-  background: transparent !important;
+  background: #e9ecef !important;
 }
 
 #main-header.home-transparent #brand {
@@ -94,22 +76,6 @@ body {
   color: #1f2937;
 }
 
-/* Home page hover: Black background + white text (works in both states) */
-#main-header.home-transparent:hover {
-  background: rgba(0, 0, 0, 0.9) !important;
-}
-
-#main-header.home-transparent:hover #brand {
-  color: #fff !important;
-}
-
-#main-header.home-transparent:hover .nav-link {
-  color: #fff !important;
-}
-
-#main-header.home-transparent:hover #mobile-menu-btn {
-  color: #fff !important;
-}
 
 /* Add text shadow for better visibility on transparent background */
 #main-header.home-transparent #brand,
@@ -141,6 +107,69 @@ body {
   transform: scaleX(1);
 }
 
+/* About page hero title – elegant serif, frosted second line */
+.about-hero-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  letter-spacing: 0.02em;
+}
+
+.about-hero-title-frost {
+  color: rgba(255, 255, 255, 0.95);
+  mix-blend-mode: screen;
+}
+
+/* Industry Expertise – pill hover micro-interaction */
+.industry-grid .industry-pill:hover {
+  background: #0f172a;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Why Choose Us + Vision & Mission side-by-side (2:1) */
+.about-section {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 50px;
+  align-items: start;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.why-grid.why-grid-vertical {
+  grid-template-columns: 1fr;
+}
+
+.vision-mission-block .vision-mission-heading {
+  color: #333446;
+  margin-top: 0;
+}
+
+.vision-mission-block .vision-box:first-of-type .vision-mission-heading {
+  margin-top: 0;
+}
+
+.vision-mission-block .vision-box:not(:first-of-type) .vision-mission-heading {
+  margin-top: 20px;
+}
+
+@media (max-width: 1024px) {
+  .about-section {
+    grid-template-columns: 1fr;
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-section .feature-card.sm\:col-span-2 {
+    grid-column: span 1;
+  }
+}
+
 /* Ensure proper z-index for header */
 #main-header {
   z-index: 50;
@@ -167,7 +196,7 @@ body {
 @media (max-width: 768px) {
   #main-header,
   #main-header.home-transparent {
-    background: rgba(255, 255, 255, 0.95) !important;
+    background: #e9ecef !important;
   }
   
   #main-header #brand,
@@ -453,3 +482,136 @@ nav {
 .process-step-mobile:nth-child(3) { animation-delay: 0.2s; }
 .process-step-mobile:nth-child(5) { animation-delay: 0.3s; }
 .process-step-mobile:nth-child(7) { animation-delay: 0.4s; }
+
+/* ============================
+   Modern SaaS Hero Layout
+   ============================ */
+
+.hero-section {
+  padding: 60px 24px 40px;
+  background: #e9ecef; /* matches viewport and navbar */
+}
+
+.hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #e9ecef;
+  border-radius: 40px 40px 160px 40px; /* top-left | top-right | bottom-right | bottom-left */
+  padding: 48px 48px 56px;
+  overflow: hidden;
+  gap: 40px;
+}
+
+.hero-left {
+  max-width: 520px;
+}
+
+.hero-left h1 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 20px 0;
+  color: #111827;
+}
+
+.hero-left p {
+  font-size: 16px;
+  color: #6b7280;
+  margin-bottom: 30px;
+}
+
+.badge {
+  display: inline-block;
+  background: #dfe3e6;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 14px;
+  color: #111827;
+}
+
+.buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.buttons .primary,
+.buttons .secondary {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 30px;
+  padding: 12px 24px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttons .primary {
+  background: #111827;
+  color: #ffffff;
+  border: none;
+}
+
+.buttons .secondary {
+  background: #ffffff;
+  color: #111827;
+  border: 1px solid #d1d5db;
+}
+
+.hero-right {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-right img,
+.hero-right video {
+  width: 450px;
+  max-width: 100%;
+  border-radius: 32px;
+  object-fit: contain;
+}
+
+@media (max-width: 1024px) {
+  .hero-container {
+    padding: 40px 32px 48px;
+  }
+
+  .hero-left h1 {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 40px 16px 32px;
+  }
+
+  .hero-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 32px 24px 40px;
+  }
+
+  .hero-left {
+    max-width: 100%;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+
+  .hero-right {
+    justify-content: center;
+    margin-top: 24px;
+  }
+
+  .hero-right img,
+  .hero-right video {
+    width: 100%;
+  }
+}

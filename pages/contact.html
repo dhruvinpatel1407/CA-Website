@@ -16,84 +16,113 @@
   <body class="bg-white text-gray-900 min-h-screen">
     <header
       id="main-header"
-      class="bg-white transition-colors duration-300 sticky top-0 z-50"
+      class="transition-colors duration-300 absolute top-0 left-0 w-full z-50 bg-transparent"
     >
-      <nav
-        class="mx-auto max-w-7xl px-6 py-8 flex items-center justify-between"
-      >
-        <span
-          class="text-2xl font-bold tracking-tight transition-colors duration-300"
-          id="brand"
-          >K. G. Bhut & Associates</span
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
+        <nav
+          class="flex items-center justify-between rounded-full bg-white/90 shadow-md px-6 py-3 backdrop-blur"
         >
-        <ul
-          class="hidden md:flex gap-8 font-semibold transition-colors duration-300"
-          id="nav-menu"
-        >
-          <li>
-            <a
-              href="../index.html"
-              class="nav-link relative transition-colors duration-300 text-gray-900"
-              >HOME</a
+          <!-- Brand -->
+          <div class="flex items-center gap-2">
+            <div
+              class="flex h-9 w-9 items-center justify-center rounded-full bg-black text-white font-bold"
             >
-          </li>
-          <li>
-            <a
-              href="about.html"
-              class="nav-link relative transition-colors duration-300 text-gray-900"
-              >ABOUT</a
+              KG
+            </div>
+            <span
+              class="text-lg font-semibold tracking-tight text-gray-900"
+              id="brand"
+              >K. G. Bhut &amp; Associates</span
             >
-          </li>
-          <li>
-            <a
-              href="services.html"
-              class="nav-link relative transition-colors duration-300 text-gray-900"
-              >SERVICES</a
-            >
-          </li>
-          <li>
-            <a
-              href="../index.html#case-study"
-              class="nav-link relative transition-colors duration-300 text-gray-900"
-              >CASE STUDY</a
-            >
-          </li>
-          <li>
-            <a
-              href="https://blogs.cakhushbu.com"
-              target="_blank"
-              rel="noopener"
-              class="nav-link relative transition-colors duration-300 text-gray-900"
-              >BLOG</a
-            >
-          </li>
-          <li>
+          </div>
+
+          <!-- Desktop nav -->
+          <ul
+            class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-800"
+            id="nav-menu"
+          >
+            <li>
+              <a
+                href="../index.html"
+                class="nav-link relative transition-colors duration-300"
+                >HOME</a
+              >
+            </li>
+            <li>
+              <a
+                href="about.html"
+                class="nav-link relative transition-colors duration-300"
+                >ABOUT</a
+              >
+            </li>
+            <li>
+              <a
+                href="services.html"
+                class="nav-link relative transition-colors duration-300"
+                >SERVICES</a
+              >
+            </li>
+            <li>
+              <a
+                href="../index.html#case-study"
+                class="nav-link relative transition-colors duration-300"
+                >CASE STUDY</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://blogs.cakhushbu.com"
+                target="_blank"
+                rel="noopener"
+                class="nav-link relative transition-colors duration-300"
+                >BLOG</a
+              >
+            </li>
+            <li>
+              <a
+                href="contact.html"
+                class="nav-link relative transition-colors duration-300"
+                >CONTACT</a
+              >
+            </li>
+          </ul>
+
+          <!-- Right: CTA (desktop) -->
+          <div class="hidden md:flex items-center gap-4">
             <a
               href="contact.html"
-              class="nav-link relative transition-colors duration-300 text-green-600"
-              >CONTACT</a
+              class="inline-flex items-center gap-2 rounded-full bg-black px-5 py-2 text-sm font-semibold text-white shadow-md hover:bg-gray-900"
             >
-          </li>
-        </ul>
-        <button
-          id="mobile-menu-btn"
-          class="md:hidden p-2 rounded-lg hover:bg-gray-100 focus:outline-none"
-        >
-          <svg
-            class="w-7 h-7"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            viewBox="0 0 24 24"
+              <span>Get In Touch</span>
+              <span
+                class="flex h-6 w-6 items-center justify-center rounded-full bg-white/20"
+              >
+                →
+              </span>
+            </a>
+          </div>
+
+          <!-- Mobile menu button -->
+          <button
+            id="mobile-menu-btn"
+            class="md:hidden p-2 rounded-lg hover:bg-gray-100 focus:outline-none"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        </button>
-      </nav>
+            <svg
+              class="w-7 h-7"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </nav>
+      </div>
       <!-- Mobile menu -->
       <div
         id="mobile-menu"
@@ -133,31 +162,31 @@
               href="https://blogs.cakhushbu.com"
               target="_blank"
               rel="noopener"
-              class="nav-link relative transition-colors duration-300"
+              class="nav-link transition-colors duration-300"
               >BLOG</a
             >
           </li>
           <li>
             <a
               href="contact.html"
-              class="nav-link-mobile transition-colors duration-300 text-green-600"
+              class="nav-link-mobile transition-colors duration-300"
               >CONTACT</a
             >
           </li>
         </ul>
       </div>
     </header>
-    <!-- Parallax Hero Section -->
+    <!-- Hero Section -->
     <section
-      class="relative h-64 md:h-80 flex items-center justify-center overflow-hidden"
+      class="relative min-h-screen -mt-28 flex items-center justify-center overflow-hidden bg-black pt-24"
     >
       <div
-        class="absolute inset-0 bg-cover bg-center"
+        class="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style="
           background-image: url('../images/contact-hero.jpg');
-          will-change: transform;
+          background-size: cover;
+          background-position: center center;
         "
-        id="parallax-bg"
       ></div>
       <div class="absolute inset-0 bg-black bg-opacity-40"></div>
       <div class="relative z-10 text-center text-white hero-content">
@@ -294,7 +323,7 @@
         <!-- Contact Form -->
         <div class="contact-form-section">
           <div class="bg-white rounded-lg shadow-lg p-8">
-            <h2 class="text-3xl font-bold mb-6">Get In Touch</h2>
+            <h2 class="text-3xl sm:text-4xl font-bold leading-tight text-[#1f2a6b] mb-6">Get In Touch</h2>
             <p class="text-gray-600 mb-8">
               Ready to take your business to the next level? Contact us today
               for a free consultation and discover how we can help you achieve
@@ -455,7 +484,7 @@
         <!-- Map and Office Info -->
         <div class="map-section">
           <div class="bg-white rounded-lg shadow-lg p-8 h-full">
-            <h2 class="text-3xl font-bold mb-6">Our Locations</h2>
+            <h2 class="text-3xl sm:text-4xl font-bold leading-tight text-[#1f2a6b] mb-6">Our Locations</h2>
 
             <!-- Office Locations -->
             <div class="space-y-6 mb-8">
@@ -519,7 +548,7 @@
       <!-- FAQ Section -->
       <section class="faq-section">
         <div class="bg-white rounded-lg shadow-lg p-8">
-          <h2 class="text-3xl font-bold text-center mb-8">
+          <h2 class="text-3xl sm:text-4xl font-bold leading-tight text-[#1f2a6b] text-center mb-8">
             Frequently Asked Questions
           </h2>
           <div class="max-w-4xl mx-auto">

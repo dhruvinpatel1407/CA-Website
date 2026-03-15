@@ -660,3 +660,83 @@ nav {
     width: 100%;
   }
 }
+
+/* Services page: Our Expertise infinite scroll rows */
+.expertise-row-wrap {
+  overflow: hidden;
+  width: 100%;
+}
+
+.expertise-track {
+  display: flex;
+  width: max-content;
+  gap: 2rem;
+  padding: 0.5rem 0;
+}
+
+.expertise-track--left {
+  animation: expertise-slide-left 35s linear infinite;
+}
+
+.expertise-track--right {
+  animation: expertise-slide-right 35s linear infinite;
+}
+
+.expertise-track .expertise-card {
+  flex: 0 0 320px;
+  min-width: 280px;
+}
+
+@keyframes expertise-slide-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes expertise-slide-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Industries We Serve: cards stack vertically on scroll */
+.industries-cards-stack {
+  position: relative;
+}
+
+.industries-cards-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-bottom: 2rem; /* minimal gap before next section */
+}
+
+.industry-card-stack {
+  position: sticky;
+  z-index: 1;
+  transition: box-shadow 0.3s ease;
+}
+
+.industry-card-stack:nth-child(1) { top: 1rem; z-index: 1; margin-top: 2rem; background-color: #000000 !important;}
+.industry-card-stack:nth-child(1) h3,
+.industry-card-stack:nth-child(1) p { color: #fff !important; }
+.industry-card-stack:nth-child(2) { top: 1.5rem; z-index: 2; background-color: #E7F2EF !important; }
+.industry-card-stack:nth-child(3) { top: 2rem; z-index: 3; background-color: #E7F2EF !important; }
+.industry-card-stack:nth-child(4) { top: 2.5rem; z-index: 4; background-color: #E7F2EF !important;}
+.industry-card-stack:nth-child(5) { top: 3rem; z-index: 5; background-color: #E7F2EF !important;}
+.industry-card-stack:nth-child(6) { top: 3.5rem; z-index: 6; background-color: #E7F2EF !important;}
+
+.industry-card-stack:hover {
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+/* Services CTA section: outline button hover uses CTA color */
+.cta-outline-btn:hover {
+  color: #708993 !important;
+}

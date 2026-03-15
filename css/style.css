@@ -292,6 +292,11 @@ a[class*="bg-"]:hover {
   transition: transform 0.3s ease;
 }
 
+/* Prevent global button:hover scale from moving FAQ text */
+.faq-question:hover {
+  transform: none;
+}
+
 .faq-answer {
   transition: all 0.3s ease;
 }
@@ -327,6 +332,46 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #15803d;
+}
+
+/* Service dropdown: thin horizontal scrollbar (same as vertical), match input rounding */
+#service-dropdown-list::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+#service-dropdown-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+#service-dropdown-list::-webkit-scrollbar-thumb {
+  background: #16a34a;
+  border-radius: 4px;
+}
+#service-dropdown-list::-webkit-scrollbar-thumb:hover {
+  background: #15803d;
+}
+
+/* Contact form – glassmorphism container */
+.form-glass {
+  background: rgba(231, 242, 239, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+/* Contact form – Send Us A Message (pale green inputs, gray border) */
+.contact-form-input {
+  background-color: #f7fff7;
+  border: 1px solid #d1d5db;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+.contact-form-input::placeholder {
+  color: #718096;
+}
+.contact-form-input:focus {
+  border-color: #9ca3af;
+  box-shadow: 0 0 0 2px rgba(156, 163, 175, 0.3);
+  outline: none;
 }
 
 /* Responsive adjustments */

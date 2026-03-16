@@ -8,6 +8,15 @@
 body {
   opacity: 1 !important;
   background: #ffffff; /* rest of page white; hero section keeps its own gray */
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    sans-serif;
+}
+
+h1,
+h2,
+.hero-title,
+.about-hero-title {
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
 }
 
 /* Remove any problematic opacity or visibility rules */
@@ -574,6 +583,34 @@ nav {
   margin-bottom: 30px;
 }
 
+/* Hero heading fade + slide up */
+.hero-heading,
+.hero-subheading,
+.hero-cta {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: hero-fade-up 1s ease forwards;
+}
+
+.hero-heading {
+  animation-delay: 0s;
+}
+
+.hero-subheading {
+  animation-delay: 0.3s;
+}
+
+.hero-cta {
+  animation-delay: 0.6s;
+}
+
+@keyframes hero-fade-up {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .badge {
   display: inline-block;
   background: #dfe3e6;
@@ -625,6 +662,33 @@ nav {
   max-width: 100%;
   border-radius: 32px;
   object-fit: contain;
+}
+
+/* Section heading fade + slide up (triggered when scrolled into view) */
+.section-heading,
+.section-subheading {
+  opacity: 0;
+  transform: translateY(24px);
+}
+
+.section-heading.is-visible,
+.section-subheading.is-visible {
+  animation: section-fade-up 0.9s ease forwards;
+}
+
+.section-heading.is-visible {
+  animation-delay: 0.05s;
+}
+
+.section-subheading.is-visible {
+  animation-delay: 0.25s;
+}
+
+@keyframes section-fade-up {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 1024px) {
@@ -691,6 +755,25 @@ nav {
 .expertise-track .expertise-card {
   flex: 0 0 320px;
   min-width: 280px;
+}
+
+/* About page: industry pills strip */
+.industry-pills-wrap {
+  overflow-x: auto;
+  width: 100%;
+}
+
+.industry-pills-track {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.25rem 0;
+  white-space: nowrap;
+}
+
+.industry-pill:hover {
+  background-color: #000000 !important;
+  color: #ffffff !important;
 }
 
 @keyframes expertise-slide-left {

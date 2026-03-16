@@ -37,37 +37,9 @@ document.addEventListener("DOMContentLoaded", function () {
       window.location.pathname === "/" ||
       window.location.pathname.includes("index.html");
 
-    // Initialize header for home page - starts with white background
-    function initializeHeader() {
-      if (isHomePage && header) {
-        // On load: white background + black text (default state)
-        header.classList.remove("home-transparent");
-        header.classList.add("shadow-lg");
-      }
-    }
-
-    // Scroll handler - only for home page
-    function handleScroll() {
-      if (!isHomePage || !header) return;
-
-      if (window.scrollY > 50) {
-        // Scrolled down: Use transparent background + black text
-        header.classList.add("home-transparent");
-        header.classList.remove("shadow-lg");
-      } else {
-        // At top: Use white background + black text
-        header.classList.remove("home-transparent");
-        header.classList.add("shadow-lg");
-      }
-    }
-
-    // Initialize and attach events
-    initializeHeader();
-
-    if (isHomePage) {
-      window.addEventListener("scroll", handleScroll);
-      window.addEventListener("load", handleScroll);
-    }
+    // Header scroll behavior for home page was making the navbar background
+    // switch between white and transparent. We now keep it always transparent
+    // like other pages, so we skip any home-specific header mutations here.
 
     // Hero content fade-in animation (for pages with .hero-content)
     if (document.querySelector(".hero-content")) {
@@ -82,35 +54,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Homepage specific animations
     if (document.querySelector(".hero-section")) {
-      const tl = gsap.timeline();
-
-      tl.to(".hero-title", {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: "power3.out",
-      })
-        .to(
-          ".hero-subtitle",
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            ease: "power3.out",
-          },
-          "-=0.5",
-        )
-        .to(
-          ".hero-buttons",
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            ease: "power3.out",
-          },
-          "-=0.3",
-        );
-
       if (document.querySelector(".about-preview")) {
         gsap.to(".about-preview", {
           opacity: 1,
@@ -232,6 +175,28 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         });
       });
+    }
+
+    // Section heading / subheading scroll-in animation (all pages)
+    const scrollAnimatedElements = document.querySelectorAll(
+      ".section-heading, .section-subheading",
+    );
+    if (scrollAnimatedElements.length > 0 && "IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(
+        (entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              obs.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          threshold: 0.25,
+        },
+      );
+
+      scrollAnimatedElements.forEach((el) => observer.observe(el));
     }
 
     // Parallax effect for hero backgrounds

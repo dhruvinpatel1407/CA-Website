@@ -341,12 +341,12 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #16a34a;
+  background: #b8cfce;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #15803d;
+  background: #b8cfce;
 }
 
 /* Service dropdown: thin horizontal scrollbar (same as vertical), match input rounding */

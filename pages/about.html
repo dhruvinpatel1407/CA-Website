@@ -199,22 +199,22 @@
             style="font-family: 'Playfair Display', Georgia, serif;"
           >
             <span class="block">ABOUT</span>
-            <span class="block about-hero-title-frost whitespace-nowrap">K.G. BHUT &amp; ASSOCIATES</span>
+            <span class="block about-hero-title-frost md:whitespace-nowrap">K.G. BHUT &amp; ASSOCIATES</span>
           </h1>
-          <p class="hero-subheading text-white/95 text-lg sm:text-xl max-w-lg mb-8 leading-relaxed">
+          <p class="hero-subheading text-white/95 text-sm sm:text-base md:text-lg w-full mb-6 sm:mb-8 leading-relaxed break-words">
             We deliver trusted financial and business advisory through expertise, integrity, and innovation.
           </p>
-          <div class="hero-cta flex flex-col sm:flex-row gap-4">
+          <div class="hero-cta flex flex-col sm:flex-row gap-3 sm:gap-4 items-start">
             <a
               href="contact.html"
-              class="inline-flex items-center justify-center rounded-full bg-black px-6 py-3 text-sm font-semibold text-white shadow-lg hover:bg-gray-900 transition-colors"
+              class="inline-flex items-center justify-center rounded-full bg-black px-4 py-2.5 text-xs sm:text-sm font-semibold text-white shadow-lg hover:bg-gray-900 transition-colors text-center"
             >
               <span>Get consultation</span>
               <span class="ml-2" aria-hidden="true">→</span>
             </a>
             <a
               href="services.html"
-              class="inline-flex items-center justify-center rounded-full bg-white/90 px-6 py-3 text-sm font-semibold text-gray-900 shadow-md hover:bg-white transition-colors"
+              class="inline-flex items-center justify-center rounded-full bg-white/90 px-4 py-2.5 text-xs sm:text-sm font-semibold text-gray-900 shadow-md hover:bg-white transition-colors text-center"
             >
               View services
             </a>
@@ -250,7 +250,7 @@
     <main class="mx-auto max-w-7xl px-6 py-8 grid gap-16">
       <!-- Company Overview – layout like reference image -->
       <section class="company-overview bg-[#EAEFEF] rounded-3xl px-6 sm:px-8 lg:px-12 py-12 lg:py-16">
-        <div class="grid lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)_minmax(0,0.9fr)] gap-10 lg:gap-12 items-start">
+        <div class="grid md:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)_minmax(0,0.9fr)] gap-10 lg:gap-12 items-start">
           <!-- Left: label, heading, smaller image -->
           <div class="space-y-6">
             <div class="flex items-center gap-2">
@@ -272,7 +272,7 @@
           </div>
 
           <!-- Middle: intro text + logo centered between paragraphs -->
-          <div class="space-y-6 mt-48 text-left">
+          <div class="space-y-6 mt-12 md:mt-24 lg:mt-48 text-left">
             <p class="section-subheading text-[#333446] text-sm sm:text-base leading-relaxed">
               At our core, we're not just accountants—we're strategic partners committed to your financial
               success. With precision, insight, and years of experience.
@@ -311,8 +311,8 @@
           </div>
         </div>
 
-        <!-- Bottom row: detailed text and CTA pulled closer under cards -->
-        <div class="-mt-16 flex justify-end">
+        <!-- Bottom row: detailed text and CTA (stacked on mobile) -->
+        <div class="mt-8 md:-mt-16 flex md:justify-end">
           <div class="space-y-6 max-w-3xl">
             <p class="text-[#333446] text-sm sm:text-base leading-relaxed">
               We exist to give ambitious businesses the financial clarity they need to lead with certainty. Our team
@@ -372,9 +372,9 @@
           </div>
         </div>
 
-        <!-- Right: Image with compact business card -->
-        <div class="relative w-full max-w-md mx-auto">
-          <div class="overflow-hidden rounded-3xl shadow-2xl h-80 sm:h-96">
+        <!-- Right: Image with compact business card (overlapping on md+, stacked on mobile) -->
+        <div class="relative w-full max-w-md mx-auto mt-10 md:mt-0">
+          <div class="overflow-hidden rounded-3xl shadow-2xl h-64 sm:h-80 md:h-96">
             <img
               src="../images/about-section 1.jpg"
               alt="Client discussing strategy with advisor"
@@ -382,7 +382,7 @@
             />
           </div>
           <div
-            class="absolute -bottom-10 right-6 w-full max-w-xs bg-[#EAEFEF] text-[#333446] rounded-2xl shadow-xl p-4 sm:p-5"
+            class="mt-5 md:mt-0 md:absolute md:-bottom-10 md:right-6 w-full max-w-xs bg-[#EAEFEF] text-[#333446] rounded-2xl shadow-xl p-4 sm:p-5"
           >
             <h3 class="text-sm font-semibold mb-1">Our Business Promise</h3>
             <p class="text-xs text-[#7F8CAA] mb-3 leading-relaxed">

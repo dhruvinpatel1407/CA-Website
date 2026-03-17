@@ -214,22 +214,22 @@
             </span>
           </h1>
           <p
-            class="hero-subheading text-white/95 text-lg sm:text-xl max-w-lg mb-8 leading-relaxed"
+            class="hero-subheading text-white/95 text-sm sm:text-base md:text-lg w-full mb-5 sm:mb-7 leading-relaxed break-words"
           >
             From tax planning to financial advisory, we help you make confident
             financial decisions.
           </p>
-          <div class="hero-cta flex flex-col sm:flex-row gap-4">
+          <div class="hero-cta flex flex-col sm:flex-row gap-3 sm:gap-4 items-start">
             <a
               href="./pages/contact.html"
-              class="inline-flex items-center justify-center rounded-full bg-black px-6 py-3 text-sm font-semibold text-white shadow-lg hover:bg-gray-900 transition-colors"
+              class="inline-flex items-center justify-center rounded-full bg-black px-4 py-2.5 text-xs sm:text-sm font-semibold text-white shadow-lg hover:bg-gray-900 transition-colors text-center"
             >
               <span>Get consultation</span>
               <span class="ml-2" aria-hidden="true">→</span>
             </a>
             <a
               href="./pages/services.html"
-              class="inline-flex items-center justify-center rounded-full bg-white/90 px-6 py-3 text-sm font-semibold text-gray-900 shadow-md hover:bg-white transition-colors"
+              class="inline-flex items-center justify-center rounded-full bg-white/90 px-4 py-2.5 text-xs sm:text-sm font-semibold text-gray-900 shadow-md hover:bg-white transition-colors text-center"
             >
               View services
             </a>
@@ -295,14 +295,14 @@
                 <img
                   src="./images/about-section.jpeg"
                   alt="K.G. Bhut & Associates office"
-                  class="w-full h-96 object-cover object-center"
+                  class="w-full h-64 sm:h-80 md:h-96 object-cover object-center"
                 />
               </div>
               <div class="flex-1 overflow-hidden rounded border border-gray-200 shadow-md translate-y-12">
                 <img
                   src="./images/office.avif"
                   alt="K.G. Bhut & Associates team at work"
-                  class="w-full h-96 object-cover object-center"
+                  class="w-full h-64 sm:h-80 md:h-96 object-cover object-center"
                 />
               </div>
             </div>
@@ -479,7 +479,7 @@
           </div>
 
           <!-- Right: image + testimonial card -->
-          <div class="relative">
+          <div class="relative mt-6 md:mt-0">
             <div
               class="overflow-hidden rounded-xl shadow-xl bg-gray-900/10 border border-gray-100"
             >
@@ -492,8 +492,8 @@
               />
             </picture>
 
-            <!-- Floating testimonial card -->
-            <div class="absolute left-4 right-4 -bottom-10">
+            <!-- Floating testimonial card (below on mobile, overlapping on md+) -->
+            <div class="mt-5 px-4 sm:px-5 md:px-0 md:absolute md:left-4 md:right-4 md:-bottom-10">
               <div
                 id="testimonial-card"
                 class="bg-white rounded-2xl shadow-xl px-5 py-4 sm:px-6 sm:py-5 flex flex-col gap-3"

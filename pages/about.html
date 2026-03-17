@@ -204,13 +204,21 @@
           <p class="hero-subheading text-white/95 text-lg sm:text-xl max-w-lg mb-8 leading-relaxed">
             We deliver trusted financial and business advisory through expertise, integrity, and innovation.
           </p>
-          <a
-            href="contact.html"
-            class="hero-cta inline-flex items-center gap-2 rounded-full bg-black px-6 py-3 text-sm font-semibold text-white shadow-lg hover:bg-gray-900 transition-colors"
-          >
-            <span>Get In Touch</span>
-            <span aria-hidden="true">→</span>
-          </a>
+          <div class="hero-cta flex flex-col sm:flex-row gap-4">
+            <a
+              href="contact.html"
+              class="inline-flex items-center justify-center rounded-full bg-black px-6 py-3 text-sm font-semibold text-white shadow-lg hover:bg-gray-900 transition-colors"
+            >
+              <span>Get consultation</span>
+              <span class="ml-2" aria-hidden="true">→</span>
+            </a>
+            <a
+              href="services.html"
+              class="inline-flex items-center justify-center rounded-full bg-white/90 px-6 py-3 text-sm font-semibold text-gray-900 shadow-md hover:bg-white transition-colors"
+            >
+              View services
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -224,7 +232,7 @@
             <div class="text-gray-700 text-sm sm:text-base">Happy Clients</div>
           </div>
           <div class="text-center p-5 sm:p-6 bg-[#A6D6D6] rounded-xl shadow-sm">
-            <div class="text-3xl sm:text-4xl font-bold text-[#333446] mb-2 counter">13</div>
+            <div class="text-3xl sm:text-4xl font-bold text-[#333446] mb-2 counter">9</div>
             <div class="text-gray-700 text-sm sm:text-base">Years Experience</div>
           </div>
           <div class="text-center p-5 sm:p-6 bg-[#A6D6D6] rounded-xl shadow-sm">
@@ -263,18 +271,27 @@
             </div>
           </div>
 
-          <!-- Middle: intro text (left aligned, slightly shifted left) -->
-          <div class="space-y-6 mt-48 text-left ">
-            <p class="section-subheading text-[#333446] text-sm sm:text-base leading-relaxed -ml-16">
+          <!-- Middle: intro text + logo centered between paragraphs -->
+          <div class="space-y-6 mt-48 text-left">
+            <p class="section-subheading text-[#333446] text-sm sm:text-base leading-relaxed">
               At our core, we're not just accountants—we're strategic partners committed to your financial
               success. With precision, insight, and years of experience.
             </p>
+            <div class="flex justify-center">
+              <div class="flex h-28 w-28 sm:h-32 sm:w-32 items-center justify-center rounded-full bg-white shadow-lg">
+                <img
+                  src="../images/New CA Logo!.jpg"
+                  alt="K.G. Bhut &amp; Associates logo"
+                  class="h-20 sm:h-24 w-auto object-contain"
+                />
+              </div>
+            </div>
           </div>
 
-          <!-- Right: 13+ stat and larger image -->
+          <!-- Right: 9+ stat and larger image -->
           <div class="space-y-4">
             <div>
-              <p class="text-4xl sm:text-5xl font-bold text-[#333446] leading-none">13+</p>
+              <p class="text-4xl sm:text-5xl font-bold text-[#333446] leading-none">9+</p>
               <p class="text-sm font-medium text-[#7F8CAA] mt-2">Years Of</p>
               <p class="text-sm font-medium text-[#7F8CAA]">Pro Experience</p>
             </div>
@@ -424,19 +441,22 @@
             solutions
           </p>
         </div>
-        <div class="industry-pills-wrap">
-          <div class="industry-pills-track">
-            <span class="industry-pill inline-block rounded-full bg-[#A6D6D6] text-gray-800 font-medium px-5 py-2.5 text-sm sm:text-base transition-all duration-200 cursor-default">Manufacturing</span>
-            <span class="industry-pill inline-block rounded-full bg-[#A6D6D6] text-gray-800 font-medium px-5 py-2.5 text-sm sm:text-base transition-all duration-200 cursor-default">IT &amp; Software</span>
-            <span class="industry-pill inline-block rounded-full bg-[#A6D6D6] text-gray-800 font-medium px-5 py-2.5 text-sm sm:text-base transition-all duration-200 cursor-default">Real Estate</span>
-            <span class="industry-pill inline-block rounded-full bg-[#A6D6D6] text-gray-800 font-medium px-5 py-2.5 text-sm sm:text-base transition-all duration-200 cursor-default">Healthcare</span>
-            <span class="industry-pill inline-block rounded-full bg-[#A6D6D6] text-gray-800 font-medium px-5 py-2.5 text-sm sm:text-base transition-all duration-200 cursor-default">Retail &amp; E-commerce</span>
-            <span class="industry-pill inline-block rounded-full bg-[#A6D6D6] text-gray-800 font-medium px-5 py-2.5 text-sm sm:text-base transition-all duration-200 cursor-default">Startups &amp; SMEs</span>
-          </div>
+        <div class="flex flex-wrap justify-center gap-3 sm:gap-4">
+          <span class="industry-pill inline-block rounded-full px-5 py-2.5 text-sm sm:text-base font-medium transition-all duration-200 cursor-default">Manufacturing</span>
+          <span class="industry-pill inline-block rounded-full px-5 py-2.5 text-sm sm:text-base font-medium transition-all duration-200 cursor-default">IT &amp; Software</span>
+          <span class="industry-pill inline-block rounded-full px-5 py-2.5 text-sm sm:text-base font-medium transition-all duration-200 cursor-default">Real Estate</span>
+          <span class="industry-pill inline-block rounded-full px-5 py-2.5 text-sm sm:text-base font-medium transition-all duration-200 cursor-default">Healthcare</span>
+          <span class="industry-pill inline-block rounded-full px-5 py-2.5 text-sm sm:text-base font-medium transition-all duration-200 cursor-default">Retail &amp; E-commerce</span>
+          <span class="industry-pill inline-block rounded-full px-5 py-2.5 text-sm sm:text-base font-medium transition-all duration-200 cursor-default">Startups &amp; SMEs</span>
+          <span class="industry-pill inline-block rounded-full px-5 py-2.5 text-sm sm:text-base font-medium transition-all duration-200 cursor-default">Education &amp; EdTech</span>
+          <span class="industry-pill inline-block rounded-full px-5 py-2.5 text-sm sm:text-base font-medium transition-all duration-200 cursor-default">Hospitality &amp; Tourism</span>
+          <span class="industry-pill inline-block rounded-full px-5 py-2.5 text-sm sm:text-base font-medium transition-all duration-200 cursor-default">Logistics &amp; Transportation</span>
+          <span class="industry-pill inline-block rounded-full px-5 py-2.5 text-sm sm:text-base font-medium transition-all duration-200 cursor-default">Media &amp; Entertainment</span>
+          <span class="industry-pill inline-block rounded-full px-5 py-2.5 text-sm sm:text-base font-medium transition-all duration-200 cursor-default">Agriculture &amp; AgriTech</span>
         </div>
       </section>
 
-      <!-- Our Process -->
+    
       <!-- Our Process -->
 <section class="our-process bg-[#EAEFEF] py-16 -mx-6 px-6 rounded-3xl">
   <div class="max-w-6xl mx-auto grid gap-10 lg:gap-16 lg:grid-cols-2 items-center">

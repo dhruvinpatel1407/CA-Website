@@ -10,6 +10,7 @@ body {
   background: #ffffff; /* rest of page white; hero section keeps its own gray */
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
     sans-serif;
+  overflow-x: hidden;
 }
 
 h1,
@@ -757,41 +758,40 @@ nav {
   min-width: 280px;
 }
 
-/* About page: industry pills strip */
+/* About page: Industry Expertise scrollable pills */
 .industry-pills-wrap {
+  position: relative;
   overflow-x: auto;
   width: 100%;
+  padding: 0.5rem 0;
+}
+
+.industry-pills-wrap::-webkit-scrollbar {
+  display: none;
+}
+
+.industry-pills-wrap {
+  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .industry-pills-track {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 0.25rem 0;
+  gap: 0.75rem;
+  padding: 0 0.25rem;
   white-space: nowrap;
+  width: max-content;
+}
+
+.industry-pill {
+  background-color: #a6d6d6;
+  color: #1f2937;
 }
 
 .industry-pill:hover {
   background-color: #000000 !important;
   color: #ffffff !important;
-}
-
-@keyframes expertise-slide-left {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-@keyframes expertise-slide-right {
-  0% {
-    transform: translateX(-50%);
-  }
-  100% {
-    transform: translateX(0);
-  }
 }
 
 /* Industries We Serve: cards stack vertically on scroll */

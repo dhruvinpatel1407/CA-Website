@@ -210,7 +210,7 @@
             href="#contact-form"
             class="hero-cta inline-flex items-center gap-2 rounded-full bg-black px-6 py-3 text-sm font-semibold text-white shadow-lg hover:bg-gray-900 transition-colors"
           >
-            <span>Get In Touch</span>
+            <span>Book a Consultation</span>
             <span aria-hidden="true">→</span>
           </a>
         </div>
@@ -416,7 +416,6 @@
 
             <script>
               (function () {
-               
                 var SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzOUaSI6y_1dSaGUhWp5TUOe3uEsOXVG9hGVzrMq58FcfIDpILsEXNxho19Wg1HHfsgSw/exec";
 
                 var form    = document.getElementById("contact-form-el");
@@ -425,13 +424,97 @@
                 var icon    = document.getElementById("submit-icon");
                 var msg     = document.getElementById("form-msg");
 
+                function clearErrors() {
+                  msg.classList.add("hidden");
+                  msg.textContent = "";
+                  msg.classList.remove("bg-red-50", "text-red-700", "bg-emerald-50", "text-emerald-700");
+
+                  var inputs = form.querySelectorAll(".contact-form-input, textarea, input[type='checkbox']");
+                  inputs.forEach(function (el) {
+                    el.classList.remove("ring-2", "ring-red-500", "border-red-500");
+                  });
+                }
+
+                function showMsg(text, isSuccess) {
+                  msg.textContent = text;
+                  msg.classList.remove("hidden");
+                  if (isSuccess) {
+                    msg.classList.remove("bg-red-50", "text-red-700");
+                    msg.classList.add("bg-emerald-50", "text-emerald-700");
+                  } else {
+                    msg.classList.remove("bg-emerald-50", "text-emerald-700");
+                    msg.classList.add("bg-red-50", "text-red-700");
+                  }
+                }
+
                 form.addEventListener("submit", function (e) {
                   e.preventDefault();
 
-                  // Basic validation
-                  var service = document.getElementById("service-value").value;
-                  if (!service) {
-                    showMsg("Please select a service.", false);
+                  clearErrors();
+
+                  var firstNameEl = document.getElementById("firstName");
+                  var lastNameEl  = document.getElementById("lastName");
+                  var phoneEl     = document.getElementById("phone");
+                  var emailEl     = document.getElementById("email");
+                  var messageEl   = document.getElementById("message");
+                  var privacyEl   = document.getElementById("privacy");
+                  var serviceVal  = document.getElementById("service-value").value;
+
+                  var errors = [];
+
+                  if (!firstNameEl.value.trim()) {
+                    errors.push("First name is required.");
+                    firstNameEl.classList.add("ring-2", "ring-red-500", "border-red-500");
+                  }
+
+                  if (!lastNameEl.value.trim()) {
+                    errors.push("Last name is required.");
+                    lastNameEl.classList.add("ring-2", "ring-red-500", "border-red-500");
+                  }
+
+                  var phone = phoneEl.value.replace(/\D+/g, "");
+                  if (!phone) {
+                    errors.push("Phone number is required.");
+                    phoneEl.classList.add("ring-2", "ring-red-500", "border-red-500");
+                  } else if (!/^\d{10}$/.test(phone)) {
+                    errors.push("Please enter a valid 10-digit phone number.");
+                    phoneEl.classList.add("ring-2", "ring-red-500", "border-red-500");
+                  }
+
+                  var email = emailEl.value.trim();
+                  if (!email) {
+                    errors.push("Email address is required.");
+                    emailEl.classList.add("ring-2", "ring-red-500", "border-red-500");
+                  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    errors.push("Please enter a valid email address.");
+                    emailEl.classList.add("ring-2", "ring-red-500", "border-red-500");
+                  }
+
+                  if (!serviceVal) {
+                    errors.push("Please select a service.");
+                    var serviceBtn = document.getElementById("service-dropdown-btn");
+                    serviceBtn.classList.add("ring-2", "ring-red-500", "border-red-500");
+                  }
+
+                  if (!messageEl.value.trim()) {
+                    errors.push("Message is required.");
+                    messageEl.classList.add("ring-2", "ring-red-500", "border-red-500");
+                  }
+
+                  if (!privacyEl.checked) {
+                    errors.push("Please agree to the Privacy Policy and Terms of Service.");
+                    privacyEl.classList.add("ring-2", "ring-red-500", "border-red-500");
+                  }
+
+                  // Honeypot check (bot)
+                  var honeypotVal = document.getElementById("honeypot").value;
+                  if (honeypotVal) {
+                    // Silently block submission for bots
+                    return;
+                  }
+
+                  if (errors.length > 0) {
+                    showMsg(errors[0], false);
                     return;
                   }
 
@@ -461,6 +544,7 @@
                     // no-cors returns opaque response, assume success
                     showMsg("✓ Message sent! We'll get back to you within 48 hours.", true);
                     form.reset();
+                    clearErrors();
                     document.getElementById("service-dropdown-label").textContent = "Select a service";
                     document.getElementById("service-dropdown-label").classList.add("text-gray-500");
                     document.getElementById("service-value").value = "";

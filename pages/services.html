@@ -78,10 +78,25 @@
           <li><a href="about.html" class="nav-link-mobile transition-colors duration-300">ABOUT</a></li>
           <li><a href="services.html" class="nav-link-mobile transition-colors duration-300">SERVICES</a></li>
           <li><a href="../index.html#case-study" class="nav-link-mobile transition-colors duration-300">CASE STUDY</a></li>
-          <li><a href="https://blogs.cakhushbu.com" target="_blank" rel="noopener" class="nav-link transition-colors duration-300">BLOG</a></li>
+          <li><a href="https://blogs.cakhushbu.com" target="_blank" rel="noopener" class="nav-link-mobile transition-colors duration-300">BLOG</a></li>
           <li><a href="contact.html" class="nav-link-mobile transition-colors duration-300">CONTACT</a></li>
         </ul>
       </div>
+      <script>
+        (function () {
+          var btn = document.getElementById("mobile-menu-btn");
+          var menu = document.getElementById("mobile-menu");
+          if (!btn || !menu) return;
+          btn.addEventListener("click", function () {
+            menu.classList.toggle("hidden");
+          });
+          menu.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+              menu.classList.add("hidden");
+            });
+          });
+        })();
+      </script>
     </header>
 
     <!-- Hero Section – same style as About page hero -->

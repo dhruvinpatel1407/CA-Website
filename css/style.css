@@ -255,6 +255,9 @@ h2,
     font-size: 0.9rem;
     line-height: 1.2;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
   }
 
   /* Mobile menu button styling */
@@ -262,6 +265,26 @@ h2,
     background: rgba(0, 0, 0, 0.05);
     border-radius: 8px;
     padding: 8px;
+  }
+
+  /* Prevent mobile navbar from expanding page width */
+  #main-header .mx-auto {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  #main-header nav {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  #main-header nav > .flex.items-center.gap-2 {
+    min-width: 0;
+    flex: 1 1 auto;
   }
 }
 

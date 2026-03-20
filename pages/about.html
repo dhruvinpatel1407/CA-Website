@@ -247,19 +247,19 @@
       </div>
     </div>
 
-    <main class="mx-auto max-w-7xl px-6 py-8 grid gap-16">
+    <main class="mx-auto max-w-7xl px-4 sm:px-6 py-8 grid gap-16">
       <!-- Company Overview – layout like reference image -->
       <section class="company-overview bg-[#EAEFEF] rounded-3xl px-6 sm:px-8 lg:px-12 py-12 lg:py-16">
         <div class="grid md:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)_minmax(0,0.9fr)] gap-10 lg:gap-12 items-start">
           <!-- Left: label, heading, smaller image -->
-          <div class="space-y-6">
-            <div class="flex items-center gap-2">
+          <div class="space-y-6 text-center md:text-left">
+            <div class="flex items-center justify-center md:justify-start gap-2">
               <span class="text-xs sm:text-sm font-semibold text-[#7F8CAA] uppercase tracking-[0.2em]">About Us</span>
             </div>
             <h2 class="section-heading text-3xl sm:text-4xl lg:text-[2.6rem] font-bold text-[#333446] leading-tight">
-              <span class="whitespace-nowrap">Accounting&nbsp;That&nbsp;Moves</span><br />Businesses Forward
+              <span class="md:whitespace-nowrap">Accounting&nbsp;That&nbsp;Moves</span><br />Businesses Forward
             </h2>
-            <div class="overflow-hidden rounded-2xl shadow-lg max-w-xs">
+            <div class="overflow-hidden rounded-2xl shadow-lg max-w-xs mx-auto md:mx-0">
               <div class="relative aspect-[3/4] bg-[#B8CFCE]">
                 <img
                   src="../images/about.jpg"
@@ -272,7 +272,7 @@
           </div>
 
           <!-- Middle: intro text + logo centered between paragraphs -->
-          <div class="space-y-6 mt-12 md:mt-24 lg:mt-48 text-left">
+          <div class="space-y-6 mt-12 md:mt-24 lg:mt-48 text-center md:text-left">
             <p class="section-subheading text-[#333446] text-sm sm:text-base leading-relaxed">
               At our core, we're not just accountants—we're strategic partners committed to your financial
               success. With precision, insight, and years of experience.
@@ -289,7 +289,7 @@
           </div>
 
           <!-- Right: 9+ stat and larger image -->
-          <div class="space-y-4">
+          <div class="space-y-4 text-center md:text-left">
             <div>
               <p class="text-4xl sm:text-5xl font-bold text-[#333446] leading-none">9+</p>
               <p class="text-sm font-medium text-[#7F8CAA] mt-2">Years Of</p>
@@ -312,8 +312,8 @@
         </div>
 
         <!-- Bottom row: detailed text and CTA (stacked on mobile) -->
-        <div class="mt-8 md:-mt-16 flex md:justify-end">
-          <div class="space-y-6 max-w-3xl">
+        <div class="mt-8 md:-mt-16 flex justify-center md:justify-end">
+          <div class="space-y-6 max-w-3xl text-center md:text-left">
             <p class="text-[#333446] text-sm sm:text-base leading-relaxed">
               We exist to give ambitious businesses the financial clarity they need to lead with certainty. Our team
               combines expertise with next-level technology to simplify complexity, uncover opportunities, and keep
@@ -335,7 +335,7 @@
         class="rounded-3xl bg-[#333446] text-white px-6 sm:px-10 lg:px-16 py-12 lg:py-16 grid lg:grid-cols-[1.2fr,0.8fr] gap-10 lg:gap-14 items-center"
       >
         <!-- Left: Vision & Mission copy -->
-        <div class="space-y-6">
+        <div class="space-y-6 text-center md:text-left">
           <span class="text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase text-[#B8CFCE]"
             >Our Vision &amp; Mission</span
           >
@@ -349,7 +349,7 @@
           </p>
 
           <div
-            class="mt-4 rounded-2xl bg-[#B8CFCE] text-[#333446] px-5 py-4 max-w-md shadow-lg flex flex-col gap-1"
+            class="mt-4 rounded-2xl bg-[#B8CFCE] text-[#333446] px-5 py-4 max-w-md mx-auto md:mx-0 shadow-lg flex flex-col gap-1 text-left"
           >
             <span class="text-xs font-semibold tracking-[0.2em] uppercase text-[#333446]/80"
               >Vision</span
@@ -361,8 +361,8 @@
             </p>
           </div>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4 w-full max-w-none sm:max-w-md">
-            <div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-4 w-full max-w-none sm:max-w-md mx-auto md:mx-0">
+            <div class="text-center md:text-left">
               <p class="text-3xl font-bold text-[#EAEFEF]">Our Mission</p>
               <p class="mt-2 text-sm text-[#B8CFCE] leading-relaxed">
                 To empower businesses with comprehensive financial solutions, strategic guidance,
@@ -400,8 +400,8 @@
       <!-- Why Choose Us – separate section -->
       <section class="mt-16 rounded-3xl bg-[#333446] text-white px-6 sm:px-10 lg:px-16 py-10 shadow-xl">
         <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-6">
-          <h2 class="section-heading text-3xl sm:text-4xl font-bold leading-tight">Why Choose Us</h2>
-          <p class="section-subheading text-sm sm:text-base text-[#B8CFCE] max-w-2xl">
+          <h2 class="section-heading text-3xl sm:text-4xl font-bold leading-tight text-center md:text-left">Why Choose Us</h2>
+          <p class="section-subheading text-sm sm:text-base text-[#B8CFCE] max-w-2xl text-center md:text-left">
             We provide the best services for your business needs with proven expertise and
             a client-first mindset.
           </p>
@@ -432,7 +432,7 @@
       </section>
 
       <section class="industry-expertise mt-16">
-        <div class="mb-8 text-left">
+        <div class="mb-8 text-center md:text-left">
           <h2 class="section-heading text-3xl sm:text-4xl font-bold leading-tight text-[#333446] mb-4">
             Industry Expertise
           </h2>
@@ -450,9 +450,9 @@
           <span class="industry-pill inline-flex items-center justify-center rounded-full px-4 sm:px-5 py-2.5 text-sm sm:text-base font-medium transition-all duration-200 cursor-default text-center max-w-full">Startups &amp; SMEs</span>
           <span class="industry-pill inline-flex items-center justify-center rounded-full px-4 sm:px-5 py-2.5 text-sm sm:text-base font-medium transition-all duration-200 cursor-default text-center max-w-full">Education &amp; EdTech</span>
           <span class="industry-pill inline-flex items-center justify-center rounded-full px-4 sm:px-5 py-2.5 text-sm sm:text-base font-medium transition-all duration-200 cursor-default text-center max-w-full">Hospitality &amp; Tourism</span>
-          <span class="industry-pill inline-flex items-center justify-center rounded-full px-4 sm:px-5 py-2.5 text-sm sm:text-base font-medium transition-all duration-200 cursor-default text-center max-w-full">Logistics &amp; Transportation</span>
+          <!-- <span class="industry-pill inline-flex items-center justify-center rounded-full px-4 sm:px-5 py-2.5 text-sm sm:text-base font-medium transition-all duration-200 cursor-default text-center max-w-full">Logistics &amp; Transportation</span>
           <span class="industry-pill inline-flex items-center justify-center rounded-full px-4 sm:px-5 py-2.5 text-sm sm:text-base font-medium transition-all duration-200 cursor-default text-center max-w-full">Media &amp; Entertainment</span>
-          <span class="industry-pill inline-flex items-center justify-center rounded-full px-4 sm:px-5 py-2.5 text-sm sm:text-base font-medium transition-all duration-200 cursor-default text-center max-w-full">Agriculture &amp; AgriTech</span>
+          <span class="industry-pill inline-flex items-center justify-center rounded-full px-4 sm:px-5 py-2.5 text-sm sm:text-base font-medium transition-all duration-200 cursor-default text-center max-w-full">Agriculture &amp; AgriTech</span> -->
         </div>
       </section>
 
@@ -461,7 +461,7 @@
 <section class="our-process bg-[#EAEFEF] py-16 mx-0 md:-mx-6 px-6 rounded-3xl">
   <div class="max-w-6xl mx-auto grid gap-10 lg:gap-16 lg:grid-cols-2 items-center">
     <!-- Left: numbered cards -->
-    <div>
+    <div class="text-center md:text-left">
       <span class="text-[#7F8CAA] font-semibold tracking-wide uppercase mb-2 block">
         How We Work
       </span>

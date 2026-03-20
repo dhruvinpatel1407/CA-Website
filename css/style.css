@@ -295,6 +295,22 @@ h2,
     flex: 1 1 auto;
     max-width: calc(100% - 3.5rem);
   }
+
+  /* About page mobile: prevent right-side clipping and section shift */
+  .about-page main,
+  .about-page section,
+  .about-page footer > div {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .about-page .hero-content,
+  .about-page .section-subheading {
+    width: 100%;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
 }
 
 /* Card hover effects */

@@ -13,6 +13,10 @@ body {
   overflow-x: hidden;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 h1,
 h2,
 .hero-title,
@@ -258,6 +262,8 @@ h2,
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 100%;
+    display: block;
+    min-width: 0;
   }
 
   /* Mobile menu button styling */
@@ -271,6 +277,7 @@ h2,
   #main-header .mx-auto {
     padding-left: 0.75rem;
     padding-right: 0.75rem;
+    max-width: 100%;
   }
 
   #main-header nav {
@@ -280,11 +287,13 @@ h2,
     overflow: hidden;
     padding-left: 1rem;
     padding-right: 1rem;
+    min-width: 0;
   }
 
   #main-header nav > .flex.items-center.gap-2 {
     min-width: 0;
     flex: 1 1 auto;
+    max-width: calc(100% - 3.5rem);
   }
 }
 

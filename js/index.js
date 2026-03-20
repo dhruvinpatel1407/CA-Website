@@ -5,18 +5,7 @@ document.documentElement.classList.add("js-enabled");
 
 document.addEventListener("DOMContentLoaded", function () {
   try {
-    // GSAP and ScrollTrigger check and registration
-    if (typeof gsap !== "undefined") {
-      gsap.registerPlugin(ScrollTrigger);
-    } else {
-      console.warn("GSAP not loaded, animations disabled");
-      // Optionally remove js-enabled to show all content
-      document.documentElement.classList.remove("js-enabled");
-      document.body.style.opacity = "1";
-      return;
-    }
-
-    // Mobile menu toggle
+    // Mobile menu toggle (independent of GSAP)
     const mobileMenuBtn = document.getElementById("mobile-menu-btn");
     const mobileMenu = document.getElementById("mobile-menu");
     if (mobileMenuBtn && mobileMenu) {
@@ -29,6 +18,17 @@ document.addEventListener("DOMContentLoaded", function () {
           mobileMenu.classList.add("hidden");
         });
       });
+    }
+
+    // GSAP and ScrollTrigger check and registration
+    if (typeof gsap !== "undefined") {
+      gsap.registerPlugin(ScrollTrigger);
+    } else {
+      console.warn("GSAP not loaded, animations disabled");
+      // Optionally remove js-enabled to show all content
+      document.documentElement.classList.remove("js-enabled");
+      document.body.style.opacity = "1";
+      return;
     }
 
     // Cache header elements

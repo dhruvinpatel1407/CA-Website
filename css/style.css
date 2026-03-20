@@ -223,7 +223,11 @@ h2,
 @media (max-width: 768px) {
   #main-header,
   #main-header.home-transparent {
-    background: #e9ecef !important;
+    background: transparent !important;
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100%;
   }
   
   #main-header #brand,
@@ -242,6 +246,13 @@ h2,
   #main-header.home-transparent #mobile-menu-btn {
     color: #1f2937 !important;
     text-shadow: none !important;
+    margin-left: 0.5rem;
+    flex-shrink: 0;
+  }
+
+  #main-header #brand,
+  #main-header.home-transparent #brand {
+    font-size: 1rem;
   }
 
   /* Mobile menu button styling */
@@ -745,6 +756,24 @@ nav {
 
 .expertise-track--right {
   animation: expertise-slide-right 35s linear infinite;
+}
+
+@keyframes expertise-slide-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes expertise-slide-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .expertise-track .expertise-card {

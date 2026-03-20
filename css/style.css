@@ -224,7 +224,7 @@ h2,
   #main-header,
   #main-header.home-transparent {
     background: transparent !important;
-    position: absolute !important;
+    position: fixed !important;
     top: 0;
     left: 0;
     width: 100%;
@@ -252,7 +252,9 @@ h2,
 
   #main-header #brand,
   #main-header.home-transparent #brand {
-    font-size: 1rem;
+    font-size: 0.9rem;
+    line-height: 1.2;
+    white-space: nowrap;
   }
 
   /* Mobile menu button styling */

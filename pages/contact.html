@@ -289,8 +289,6 @@
             <form id="contact-form-el" class="space-y-5">
               <!-- Honeypot: hidden from humans, bots fill this -->
               <input type="text" name="honeypot" id="honeypot" style="display:none;" tabindex="-1" autocomplete="off" />
-              <!-- Hidden IP field -->
-              <input type="hidden" id="userIp" name="userIp" value="" />
               <div class="grid sm:grid-cols-2 gap-5">
                 <div>
                   <input
@@ -447,10 +445,12 @@
                 var icon    = document.getElementById("submit-icon");
                 var msg     = document.getElementById("form-msg");
 
+                var RATE_LIMIT_KEY = "kgbhut_last_submit";
+                var RATE_LIMIT_MS  = 10 * 60 * 1000; // 10 minutes
+
                 function clearErrors() {
                   msg.classList.add("hidden");
                   msg.textContent = "";
-                  msg.classList.remove("bg-red-50", "text-red-700", "bg-emerald-50", "text-emerald-700");
 
                   var inputs = form.querySelectorAll(".contact-form-input, textarea, input[type='checkbox']");
                   inputs.forEach(function (el) {
@@ -458,20 +458,16 @@
                   });
                 }
 
-                function showMsg(text, isSuccess) {
-                  msg.textContent = text;
-                  msg.classList.remove("hidden");
-                  if (isSuccess) {
-                    msg.classList.remove("bg-red-50", "text-red-700");
-                    msg.classList.add("bg-emerald-50", "text-emerald-700");
-                  } else {
-                    msg.classList.remove("bg-emerald-50", "text-emerald-700");
-                    msg.classList.add("bg-red-50", "text-red-700");
-                  }
-                }
-
                 form.addEventListener("submit", function (e) {
                   e.preventDefault();
+
+                  // Rate limit check
+                  var lastSubmit = localStorage.getItem(RATE_LIMIT_KEY);
+                  if (lastSubmit && Date.now() - parseInt(lastSubmit, 10) < RATE_LIMIT_MS) {
+                    var remaining = Math.ceil((RATE_LIMIT_MS - (Date.now() - parseInt(lastSubmit, 10))) / 60000);
+                    showMsg("Please wait " + remaining + " minute" + (remaining > 1 ? "s" : "") + " before submitting again.", false);
+                    return;
+                  }
 
                   clearErrors();
 
@@ -549,7 +545,6 @@
                   var payload = {
                     token     : "kgbhut2025",
                     honeypot  : document.getElementById("honeypot").value,
-                    ip        : document.getElementById("userIp").value || "unknown",
                     firstName : document.getElementById("firstName").value.trim(),
                     lastName  : document.getElementById("lastName").value.trim(),
                     phone     : document.getElementById("phone").value.trim(),
@@ -565,6 +560,7 @@
                   })
                   .then(function () {
                     // no-cors returns opaque response, assume success
+                    localStorage.setItem(RATE_LIMIT_KEY, Date.now().toString());
                     showMsg("✓ Message sent! We'll get back to you within 48 hours.", true);
                     form.reset();
                     clearErrors();
@@ -898,15 +894,6 @@
         </div>
       </div>
     </footer>
-    <script>
-      fetch('https://api.ipify.org?format=json')
-        .then(function(r) { return r.json(); })
-        .then(function(d) {
-          var el = document.getElementById('userIp');
-          if (el) el.value = d.ip;
-        })
-        .catch(function() {}); // silently fail if blocked
-    </script>
   </body>
 </html>
 

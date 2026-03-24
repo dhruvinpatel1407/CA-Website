@@ -779,6 +779,21 @@ nav {
     padding: 40px 16px 32px;
   }
 
+  /* Home about stats: keep labels visually aligned across two-column grid */
+  .about-stat-label {
+    min-height: 2.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.35;
+    text-align: center;
+  }
+
+  /* Home services cards: keep paragraph text left-aligned on mobile */
+  .services-preview .service-card p {
+    text-align: left;
+  }
+
   .hero-container {
     flex-direction: column;
     text-align: center;

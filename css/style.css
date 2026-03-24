@@ -1,3 +1,4 @@
+
 /* ========================================
    K.G. Bhut & Associates - Main Stylesheet
    ======================================== */
@@ -454,6 +455,17 @@ html {
   border-color: #9ca3af;
   box-shadow: 0 0 0 2px rgba(156, 163, 175, 0.3);
   outline: none;
+}
+
+/* Keyboard accessibility: clear focus ring for interactive elements */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #93c5fd;
+  outline-offset: 2px;
+  box-shadow: 0 0 0 3px rgba(147, 197, 253, 0.35);
 }
 
 /* Responsive adjustments */
